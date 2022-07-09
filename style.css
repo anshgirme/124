@@ -21,3 +21,21 @@ body
     font-size: 25px;
     height: 50px;
 }
+.play_button1
+{
+    float: left;
+    width: 130px;
+    font-size: 25px;
+}
+.play_button2
+{
+    float: right;
+    width: 130px;
+    font-size: 25px;
+}
+
+canvas
+{
+    border:5px solid white;
+    border-radius: 20px;
+}

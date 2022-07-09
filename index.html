@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
 </head>
 
 <body background="bg.jpg">
@@ -22,9 +22,11 @@
       <br>
       <span class="note">NOTE - Get your left-hand wrist in front of the webcam to play one song. Get your right-hand
         wrist in front of the webcam to play OthBer Song.</span>
-    </h3> 
-      <h3 class="btn btn-danger" id="song_name">Song Name</h3>
+    </h3>
+    <h3 class="btn btn-danger" id="song_name">Song Name</h3>
     <br><br>
+    <button onclick="play();" class="btn btn-success play_button1">Play</button>
+    <button onclick="play1();" class="btn btn-success play_button2">Play1</button>
   </center>
 
   <script src="main.js"></script>
