@@ -29,6 +29,9 @@ function modelLoaded() {
 function gotPoses(results) {
     if (results.length > 0) {
         console.log(results);
+        scoreLeftWrist = results[0].pose.keypoints[9].score;
+        console.log("scoreRightWrist = " + scoreRightWrist + "scoreLeftWrist = " + scoreLeftWrist);
+
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
         console.log("leftWristX = " + leftWristX + " leftWristY = " + leftWristY)
@@ -49,4 +52,22 @@ function play1() {
     song2.play();
     song2.setVolume(1);
     song2.rate(1);
+}
+
+function draw() {
+    image(video, 0, 0, 600, 500);
+    song1_status = song1.isPlaying();
+    song2_status = song2.isPlaying();
+    fill('red');
+    stroke("black")
+
+    if (scoreLeftWrist > 0.2) {
+        circle(leftWristX, leftWristY, 20);
+        song1.stop();
+        if(song2_status == false)
+        {
+            song2.play();
+            document.getElementById("song").innerHTML = "Playing Peter Pan Song";
+        }
+    }
 }
